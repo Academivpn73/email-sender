@@ -1,8 +1,9 @@
-name: Send Email Every 5 Minutes
+name: Send Email
 
 on:
+  workflow_dispatch:  # اجرای دستی
   schedule:
-    - cron: '*/5 * * * *'  # هر 5 دقیقه
+    - cron: '*/5 * * * *'  # اجرای خودکار هر 5 دقیقه
 
 jobs:
   send_email:
@@ -15,7 +16,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "پیام خودکار از گیت‌هاب"
-          body: "سلام! این ایمیل هر ۵ دقیقه ارسال میشه."
+          subject: "ایمیل تستی از GitHub"
+          body: "سلام! این ایمیل به صورت دستی ارسال شده."
           to: your_target_email@example.com
           from: GitHub Action <academi.mah87@gmail.com>
