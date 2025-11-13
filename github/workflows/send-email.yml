@@ -3,7 +3,7 @@ name: Send Email
 on:
   workflow_dispatch:  # اجرای دستی
   schedule:
-    - cron: '*/5 * * * *'  # اجرای خودکار هر 5 دقیقه
+    - cron: '*/8 * * * *'  # اجرای خودکار هر 8 دقیقه
 
 jobs:
   send_email:
@@ -16,7 +16,17 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "ایمیل تستی از GitHub"
-          body: "سلام! این ایمیل به صورت دستی ارسال شده."
-          to: your_target_email@example.com
-          from: GitHub Action <academi.mah87@gmail.com>
+          subject: "📩 پیام اختصاصی از آکادمی"
+          html_body: |
+            <div style="font-family:Tahoma; direction:rtl; text-align:right;">
+              <img src="https://github.com/Academivpn73/DNS_panel/blob/main/Academi_logo.png?raw=true" alt="Academi Logo" width="200" />
+              <h3>𝙊𝙒𝙉𝙀𝙍 ↴<br> @Puriya73</h3>
+              <p>
+              در این کانال هدف ما اتصال پایدار شما به اینترنت و پاسخگویی به نیاز های شما در کوتاه ترین زمان ممکن با اکانت های اختصاصی است.
+              </p>
+              <p><strong>𝙂𝙍𝙊𝙐𝙋:</strong> @Academi_team<br>
+              <strong>𝙎𝙪𝙥𝙥𝙤𝙧𝙩:</strong> @Academii_support</p>
+              <p style="color:#e91e63; font-size:18px;">💓همراهی شما باعث افتخار ماست💓</p>
+            </div>
+          to: academi.mah87@gmail.com
+          from: Academi Bot <academi.mah87@gmail.com>
