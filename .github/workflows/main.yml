@@ -18,15 +18,17 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "📩 پیام اختصاصی از آکادمی"
           html_body: |
-            <div style="font-family:Tahoma; direction:rtl; text-align:right;">
-              <img src="https://github.com/Academivpn73/DNS_panel/blob/main/Academi_logo.png?raw=true" alt="Academi Logo" width="200" />
-              <h3>𝙊𝙒𝙉𝙀𝙍 ↴<br> @Puriya73</h3>
-              <p>
-              در این کانال هدف ما اتصال پایدار شما به اینترنت و پاسخگویی به نیاز های شما در کوتاه ترین زمان ممکن با اکانت های اختصاصی است.
+            <div style="font-family:Tahoma; direction:rtl; text-align:right; background-color:#f9f9f9; padding:20px; border-radius:10px;">
+              <img src="https://raw.githubusercontent.com/Academivpn73/DNS_panel/main/Academi_logo.png" alt="Academi Logo" width="180" style="margin-bottom:20px;" />
+              <h3 style="color:#333;">𝙊𝙒𝙉𝙀𝙍 ↴<br> <span style="color:#0077cc;">@Puriya73</span></h3>
+              <p style="font-size:15px; line-height:1.6;">
+                در این کانال هدف ما اتصال پایدار شما به اینترنت و پاسخگویی به نیاز های شما در کوتاه‌ترین زمان ممکن با اکانت‌های اختصاصی است.
               </p>
-              <p><strong>𝙂𝙍𝙊𝙐𝙋:</strong> @Academi_team<br>
-              <strong>𝙎𝙪𝙥𝙥𝙤𝙧𝙩:</strong> @Academii_support</p>
-              <p style="color:#e91e63; font-size:18px;">💓همراهی شما باعث افتخار ماست💓</p>
+              <p style="font-size:15px;">
+                <strong>𝙂𝙍𝙊𝙐𝙋:</strong> <span style="color:#0077cc;">@Academi_team</span><br>
+                <strong>𝙎𝙪𝙥𝙥𝙤𝙧𝙩:</strong> <span style="color:#0077cc;">@Academii_support</span>
+              </p>
+              <p style="color:#e91e63; font-size:18px; font-weight:bold;">💓 همراهی شما باعث افتخار ماست 💓</p>
             </div>
           to: academi.mah87@gmail.com
-          from: Academi Bot <academi.mah87@gmail.com>
+          from: Academi Vpn <academi.mah87@gmail.com>
