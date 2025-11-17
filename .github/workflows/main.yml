@@ -1,37 +1,22 @@
-name: Send Email
+name: Keep Email Active
 
 on:
-  workflow_dispatch:  # اجرای دستی
   schedule:
-    - cron: '*/8 * * * *'  # اجرای خودکار هر 8 دقیقه
+    - cron: "*/10 * * * *"   # اجرای خودکار هر 10 دقیقه
+  workflow_dispatch:          # اجرای دستی هم ممکن است
 
 jobs:
   send_email:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        recipient: [ "academi.mah87@gmail.com", "academi.mah88@gmail.com" ]
     steps:
-      - name: Send Email to ${{ matrix.recipient }}
+      - name: Send Ping Email
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}   # ایمیل فرستنده
-          password: ${{ secrets.EMAIL_PASSWORD }}   # پسورد یا App Password
-          subject: "📩 پیام اختصاصی از آکادمی"
-          html_body: |
-            <div style="font-family:Tahoma; direction:rtl; text-align:right; background-color:#f9f9f9; padding:20px; border-radius:10px;">
-              <img src="https://raw.githubusercontent.com/Academivpn73/DNS_panel/main/Academi_logo.png" alt="Academi Logo" width="180" style="margin-bottom:20px;" />
-              <h3 style="color:#333;">𝙊𝙒𝙉𝙀𝙍 ↴<br> <span style="color:#0077cc;">@Puriya73</span></h3>
-              <p style="font-size:15px; line-height:1.6;">
-                در این کانال هدف ما اتصال پایدار شما به اینترنت و پاسخگویی به نیاز های شما در کوتاه‌ترین زمان ممکن با اکانت‌های اختصاصی است.
-              </p>
-              <p style="font-size:15px;">
-                <strong>𝙂𝙍𝙊𝙐𝙋:</strong> <span style="color:#0077cc;">@Academi_team</span><br>
-                <strong>𝙎𝙪𝙥𝙥𝙤𝙧𝙩:</strong> <span style="color:#0077cc;">@Academii_support</span>
-              </p>
-              <p style="color:#e91e63; font-size:18px; font-weight:bold;">💓 همراهی شما باعث افتخار ماست 💓</p>
-            </div>
-          from: Academi Vpn <${{ secrets.EMAIL_USERNAME }}>
-          to: ${{ matrix.recipient }}
+          password: ${{ secrets.EMAIL_PASSWORD }}   # App Password
+          subject: "📩 Ping Email"
+          body: "این یک ایمیل تستی برای فعال نگه داشتن حساب است."
+          from: KeepAlive <${{ secrets.EMAIL_USERNAME }}>
+          to: academi.mah88@gmail.com
